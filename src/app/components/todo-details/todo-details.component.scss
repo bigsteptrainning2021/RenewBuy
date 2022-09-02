@@ -1,0 +1,133 @@
+.todo_detail {
+  display: flex;
+  flex-direction: row;
+  height:900px;
+  width: 100%;
+  overflow-y: hidden;
+  justify-content: space-between;
+}
+.tabs {
+  width: 25%;
+  border: 1px solid black;
+  border-radius: 8px;
+  display: flex;
+  // align-items: center;
+  flex-direction: column;
+  overflow: scroll;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+.todo {
+  display: flex;
+  justify-content: center;
+}
+.cards {
+  margin: 4%;
+  overflow: scroll;
+}
+.card {
+  border: 2px solid black;
+  border-radius: 4px;
+//   transition: 0.3s;
+  width: 98%;
+}
+
+.av {
+  width: 100%;
+}
+.container {
+  padding: 2px 16px;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+}
+.cont {
+  height: 100%;
+}
+
+.modal-box {
+  position: absolute;
+  width: 424px;
+  height: 294px;
+  border: 3px dashed black;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  padding: 4px;
+  border-radius: 10px;
+}
+.select-modal {
+  width: 424px;
+  height: 294px;
+  background-color: wheat;
+  border-radius: 10px;
+}
+
+.low-opacity {
+  opacity: 0.5;
+}
+.action-button {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.action {
+  width: 400px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+}
+
+.button {
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.submit {
+  background-color: #4caf50;
+  margin-left: 4px;
+  margin-right: 17px;
+}
+.cancel {
+  background-color: red;
+}
+select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 8px;
+  display: inline-block;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+.bgBlur {
+  filter: blur(20px);
+}
+.button-add{
+    margin-left: 8px;
+    margin-right: 8px;
+    border-radius: 8px;
+    border: 1px dashed black;
+    color: black;
+}
+.border{
+    border:2px dashed black;
+    border-radius: 8px;
+    margin: 8px;
+    overflow: scroll;
+    height:90%;
+}
+h2,h4,p,option{
+    text-transform: capitalize;
+}

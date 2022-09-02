@@ -1,0 +1,88 @@
+<div class="todo_detail" [ngClass]="{bgBlur:showNavigateTab}">
+    <div class="todo tabs">
+        <h3>Todo-Count : {{todoList.length}}</h3>
+        <button class="button button-add" (click)="addTodo()">+</button>
+        <div class="border">
+            <div class="cards"  *ngFor="let item of todoList">
+              <div class="card" [ngClass]="{normal:item.priority==='average',high:item.priority==='high',critical:item.priority==='critical'}">
+                <img src="{{item.image}}" alt="Avatar" class="av">
+                <div class="container">
+                  <h2><b>{{item.title}}</b></h2> 
+                  <p>{{item.description}}</p> 
+                <h4>{{item.priority}}</h4>
+
+                </div>
+              </div>  
+                </div>
+        </div>
+    </div>
+    <div class="in_progress tabs">
+        <h3>In-Progress-Count : {{inProgessList.length}}</h3>
+        <button  class="button button-add" (click)="moveCardByForm()">+</button>
+        <div class="border">
+          <div class="cards"  *ngFor="let item of inProgessList">
+            <div class="card" [ngClass]="{normal:item.priority==='average',high:item.priority==='high',critical:item.priority==='critical'}">
+              <img src="{{item.image}}" alt="Avatar" class="av">
+              <div class="container">
+                <h2><b>{{item.title}}</b></h2> 
+                <p>{{item.description}}</p> 
+                <h4>{{item.priority}}</h4>
+              </div>
+            </div>  
+              </div>
+      </div>
+    </div>
+    <div class="completed tabs">
+      <h3>Completed : {{completedList.length}} </h3>
+      <div class="border">
+        <div class="cards"  *ngFor="let item of completedList">
+          <div class="card" [ngClass]="{normal:item.priority==='average',high:item.priority==='high',critical:item.priority==='critical'}">
+            <img src="{{item.image}}" alt="Avatar" class="av">
+            <div class="container">
+              <h2><b>{{item.title}}</b></h2> 
+              <p>{{item.description}}</p> 
+              <h4>{{item.priority}}</h4>
+            </div>
+          </div>  
+            </div>
+    </div>
+    </div>
+</div>
+
+<div class="modal-box" *ngIf="showNavigateTab">
+  <form
+    #formData="ngForm"
+    (ngSubmit)="onSubmitMoveCard(formData)"
+    ngNativeValidate
+  >
+    <div class="select-modal">
+      <div class="action">
+        <br>
+        <label for="selectTitle">Titles:</label>
+        <select name="selectTitle" id="selectTitle" ngModel required>
+          <option value="" hidden selected disabled >Choose Title</option>
+          <option *ngFor="let card of todoList" [value]="card.title">
+            {{ card.title }}
+          </option>
+        </select>
+        <br />
+        <!-- Action -->
+        <label for="navigateToTab">Action:</label>
+        <select name="navigateToTab" id="navigateToTab" ngModel required>
+          <option value="" selected disabled hidden>Choose Tab</option>
+          <option value="todo">To Do</option>
+          <option value="inProgress">In Progress</option>
+          <option value="completed">Completed</option>
+        </select>
+      </div>
+      <div class="action-button">
+        <a
+          class="button cancel"
+          (click)="showNavigateTab = !showNavigateTab"
+          >Cancel</a
+        >
+        <button class="button submit">Submit</button>
+      </div>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,26 @@
+<div class="formPage">
+    <form #addTodo="ngForm" (ngSubmit)="onSubmit(addTodo)" ngNativeValidate>
+        <fieldset>
+        <legend>Add Todo</legend>
+      <div class="formDetails">
+        <label for="title">Title:</label><br>
+        <input type="text" id="title" name="title" ngModel required /><br>
+        <label for="description">Description:</label><br>
+        <textarea id="text" name="description" ngModel required></textarea><br>
+        <label for="priority">Priority:</label><br>
+        <select name="priority" id="priority" ngModel required><br>
+          <option value="" selected disabled hidden>Choose here</option>
+          <option value="critical">Critical</option>
+          <option value="high">High</option>
+          <option value="average">Average</option>
+        </select><br>
+        <label for="image">Image:</label><br>
+        <input type="file" id="image" name="image" accept="image/*" (change)="onChange($event);" ngModel required/><br>
+        <div class="action-button mt-2">
+          <a class="button cancel" [routerLink]="['/']">Cancel</a>
+          <button class="button submit">Submit</button>
+        </div>
+      </div>
+      </fieldset>
+    </form>
+  </div>
