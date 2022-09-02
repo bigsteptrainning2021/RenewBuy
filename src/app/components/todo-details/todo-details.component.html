@@ -4,7 +4,7 @@
         <button class="button button-add" (click)="addTodo()">+</button>
         <div class="border">
             <div class="cards"  *ngFor="let item of todoList">
-              <div class="card" [ngClass]="{normal:item.priority==='average',high:item.priority==='high',critical:item.priority==='critical'}">
+              <div class="card">
                 <img src="{{item.image}}" alt="Avatar" class="av">
                 <div class="container">
                   <h2><b>{{item.title}}</b></h2> 
